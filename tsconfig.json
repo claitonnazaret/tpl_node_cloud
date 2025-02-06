@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2020" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-    "module": "commonjs" /* Specify what module code is generated. */,
-    "rootDir": "src" /* Specify the root folder within your source files. */,
+    "target": "es2016",
+    "module": "commonjs",
+    "rootDir": "src",
     "outDir": "./dist",
     "moduleResolution": "node",
     "baseUrl": "src",

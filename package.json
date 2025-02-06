@@ -1,31 +1,20 @@
 {
   "name": "tpl_node_cloud",
   "version": "1.0.0",
-  "description": "Template de projeto node com Mongodb",
-  "main": "index.js",
+  "main": "src/server.ts",
+  "repository": "git@github.com:claitonnazaret/tpl_node_cloud.git",
+  "author": "Claiton Nazaret <claitonnazaret@gmail.com>",
+  "license": "MIT",
+  "private": true,
   "scripts": {
-    "dev": "nodemon --watch src/ --exec ts-node src/server.ts -e ts"
+    "start": "nodemon src/server.ts",
+    "build": "tsc",
+    "dev": "nodemon --watch src --exec ts-node src/server.ts -e ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/claitonnazaret/tpl_node_cloud.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/claitonnazaret/tpl_node_cloud/issues"
-  },
-  "homepage": "https://github.com/claitonnazaret/tpl_node_cloud#readme",
   "devDependencies": {
-    "@eslint/js": "^9.19.0",
     "@types/node": "^22.13.1",
-    "eslint": "^9.19.0",
-    "globals": "^15.14.0",
     "nodemon": "^3.1.9",
-    "prettier": "^3.4.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.23.0"
+    "typescript": "^5.7.3"
   }
 }
