@@ -1,27 +1,47 @@
+import typescriptEslint from '@typescript-eslint/eslint-plugin'
 import globals from 'globals'
-import pluginJs from '@eslint/js'
-import tseslint from 'typescript-eslint'
-import prettier from 'eslint-config-prettier'
+import tsParser from '@typescript-eslint/parser'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import js from '@eslint/js'
+import { FlatCompat } from '@eslint/eslintrc'
 
-/** @type {import('eslint').Linter.Config[]} */
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
+})
+
 export default [
-  { files: ['**/*.{js,mjs,cjs,ts}'] },
+  ...compat.extends(
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ),
   {
+    plugins: {
+      '@typescript-eslint': typescriptEslint,
+    },
+
     languageOptions: {
-      globals: globals.node,
-      ecmaVersion: 5,
-      sourceType: 'script',
+      globals: {
+        ...globals.node,
+        ...globals.jest,
+      },
+
+      parser: tsParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+
+      parserOptions: {
+        project: ['./tsconfig.json'],
+      },
     },
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-      project: './tsconfig.json',
-    },
-    plugins: { prettier, tseslint },
+
     rules: {
-      'prettier/prettier': 'error',
       '@typescript-eslint/no-unused-vars': 'error',
     },
   },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
 ]
