@@ -1,7 +1,5 @@
-class Person {
-  sayMyName() {
-    return 'Claiton'
-  }
-}
+import Teste from '@/teste/teste'
 
-export default Person
+const teste = new Teste()
+
+console.log(teste.testConsoleString())

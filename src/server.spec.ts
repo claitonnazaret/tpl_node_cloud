@@ -1,6 +1,6 @@
-import Person from './server'
+import Teste from '@/teste/teste'
 
 it('should sum', () => {
-  const person = new Person()
-  expect(person.sayMyName()).toBe('Claiton')
+  const teste = new Teste()
+  expect(teste.testConsoleString()).toBe('Testando console.log')
 })
