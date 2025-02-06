@@ -1,0 +1,24 @@
+{
+  "name": "tpl_node_cloud",
+  "version": "1.0.0",
+  "description": "Template de projeto node com Mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claitonnazaret/tpl_node_cloud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claitonnazaret/tpl_node_cloud/issues"
+  },
+  "homepage": "https://github.com/claitonnazaret/tpl_node_cloud#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "typescript": "^5.7.3"
+  }
+}
