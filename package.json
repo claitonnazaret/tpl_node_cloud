@@ -13,7 +13,8 @@
     "husky:prepare": "husky",
     "test": "jest --passWithNoTests",
     "test:watch": "yarn test --watch",
-    "test:staged": "yarn test --findRelatedTests"
+    "test:staged": "yarn test --findRelatedTests",
+    "test:push": "yarn test --coverage"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
